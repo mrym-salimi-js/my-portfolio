@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Figtree } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider;
-
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import PortfolioSidebarMenu from "@/components/PortfolioSidebarMenu";
+import { ModeToggle } from "@/components/ModeToggle";
+import LangToggle from "@/components/LangToggle";
+import { LanguageProvider } from "@/components/LanguageProvider";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
-const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
+// const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +22,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 export const iranSans = localFont({
-  src: "../../public/fonts/IRANSansWeb.ttf",
+  src: "../public/fonts/IRANSansWeb.ttf",
   variable: "--font-iran-sans",
+  display: "swap",
+});
+export const lalezar = localFont({
+  src: "../public/fonts/Lalezar-Regular.ttf",
+  variable: "--font-lalezar",
   display: "swap",
 });
 export const metadata: Metadata = {
@@ -30,17 +39,38 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, iranSans.variable, "font-sans", figtree.variable)}
+      lang="fa"
+      suppressHydrationWarning
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        iranSans.variable,
+        lalezar.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col ">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <LanguageProvider>
+            <div className="w-full flex flex-col md:flex-row items-start  p-3 bg-background">
+              <PortfolioSidebarMenu />
+              <MobileBottomNav />
+
+              <div className="w-full mb-20 md:mb-0  h-auto px-6 py-4 flex flex-col gap-5 ">
+                <header className="w-full h-12   flex items-center justify-end gap-2 ">
+                  <ModeToggle />
+                  <LangToggle />
+                </header>
+                {children}
+              </div>
+            </div>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

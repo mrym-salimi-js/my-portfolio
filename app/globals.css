@@ -49,16 +49,17 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #ffffff;
+  --foreground: #dfdcc433;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(87.9% 0.169 91.605);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
+  --third: #2c2f28;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -73,7 +74,7 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: #dfdcc427;
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -84,16 +85,17 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: #0a0a0a;
+  --foreground: #242424;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: #ffd230;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
+  --third: #f4f9ea;
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
@@ -127,4 +129,43 @@
   html {
     @apply font-sans;
   }
+}
+
+.font-lalezar {
+  font-family: var(--font-lalezar);
+}
+.font-iran-sans {
+  font-family: var(--font-iran-sans);
+}
+html[lang="fa"] {
+  font-family: var(--font-iran-sans);
+}
+
+html[lang="en"] {
+  font-family: var(--font-figtree);
+}
+/*Animated blob*/
+@keyframes softBlob {
+  0% {
+    border-radius: 48% 52% 55% 45% / 45% 50% 50% 55%;
+  }
+
+  25% {
+    border-radius: 52% 48% 48% 52% / 50% 45% 55% 50%;
+  }
+
+  50% {
+    border-radius: 45% 55% 52% 48% / 55% 50% 50% 45%;
+  }
+
+  75% {
+    border-radius: 50% 50% 45% 55% / 48% 55% 45% 52%;
+  }
+
+  100% {
+    border-radius: 48% 52% 55% 45% / 45% 50% 50% 55%;
+  }
+}
+.animate-soft-blob {
+  animation: softBlob 8s ease-in-out infinite;
 }
