@@ -50,7 +50,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #dfdcc433;
+  --foreground: #ffffff;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -74,7 +74,7 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: #dfdcc427;
+  --sidebar: #ffffff;
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -130,7 +130,22 @@
     @apply font-sans;
   }
 }
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  cursor: pointer;
+}
+.scroll-thumb-secondary::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+}
 .font-lalezar {
   font-family: var(--font-lalezar);
 }
@@ -168,4 +183,17 @@ html[lang="en"] {
 }
 .animate-soft-blob {
   animation: softBlob 8s ease-in-out infinite;
+}
+@keyframes shine {
+  from {
+    background-position: 200% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+.animate-shine {
+  animation: shine 3s linear infinite;
 }

@@ -121,7 +121,7 @@ export default function PortfolioSidebarMenu() {
 
         <main className="min-h-screen ">
           <div className="w-10 h-10 rounded-xl mt-6 ml-4 hover:opacity-[0.7] flex items-center justify-center bg-primary/10">
-            <SidebarTrigger className="text-primary" />
+            <SidebarTrigger className="text-primary " />
           </div>
         </main>
       </SidebarProvider>

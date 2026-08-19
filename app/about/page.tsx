@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/components/LanguageProvider";
 import { about } from "@/data/about";
+import { UserRound } from "lucide-react";
 
 export default function About() {
   const { lang } = useLanguage();
@@ -11,18 +12,19 @@ export default function About() {
   return (
     <div
       dir={lang === "en" ? "ltr" : "rtl"}
-      className="w-full rounded-2xl border bg-foreground/50 p-8"
+      className="w-full  rounded-2xl border bg-foreground/50 p-2 md:p-8"
     >
       <div className="flex flex-col gap-4 p-2">
         {/* Header */}
-        <div className="flex flex-col gap-2">
-          <h1 className="font-lalezar text-3xl text-amber-300">
-            {data.title[lang]}
-          </h1>
-
-          <p className="text-lg text-amber-200">{data.intro[lang]}</p>
+        <div className="flex flex-col gap-4">
+          <div className="w-auto h-auto flex gap-3 items-center text-amber-300">
+            <UserRound className="size-4.5 shrink-0 " />
+            <h1 className="font-lalezar text-3xl ">{data.title[lang]}</h1>
+          </div>
+          <p className="text-[0.95rem] text-amber-300 mr-8">
+            {data.intro[lang]}
+          </p>
         </div>
-
         {/* Timeline */}
         <div className="flex flex-col p-2">
           {data.timeline.map((item) => (
