@@ -3,7 +3,8 @@
 import { heroData } from "@/data/hero";
 import { useLanguage } from "@/components/LanguageProvider";
 import Image from "next/image";
-import { Globe, Link } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const { lang } = useLanguage();
@@ -46,13 +47,15 @@ export default function Home() {
         </div>
         <div className="w-full border-t pt-3 border-primary/10 h-auto flex gap-2 flex-wrap text-[#695936] dark:text-primary">
           {data.usefulLinks.map((link) => (
-            <div
+            <Link
+              target="_blank"
+              href={link.url}
               className="w-30 p-3 bg-primary rounded-xl  hover:opacity-[0.7]  text-yellow-900 flex items-center gap-3 cursor-pointer "
               key={link.id}
             >
-              <Link className="size-4 " />
+              <LinkIcon className="size-4 " />
               <span className="w-auto  text-sm ">{link.title}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
