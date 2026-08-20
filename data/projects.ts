@@ -268,7 +268,7 @@ export const projects = {
       images: [
         {
           id: 1,
-          src: "/projects/zabanabzar-logo.png",
+          src: "/projects/zabanabzar-Logo.png",
         },
       ],
     },
