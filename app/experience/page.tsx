@@ -67,10 +67,6 @@ export default function Experiences() {
                     <TvMinimal className="size-4 text-amber-300" />
                     <p className="text-sm ">{item.role[lang]}</p>
                   </div>
-                  {/* <div className="flex items-center gap-3 py-2">
-                    <span className="w-4 h-1 rounded-full bg-amber-300"></span>
-                    <p className="text-sm ">{item.type[lang]}</p>
-                  </div> */}
 
                   {/* Description */}
                   {item.description[lang]}
@@ -89,8 +85,8 @@ export default function Experiences() {
                 {item.responsibilities[lang].map((res, index) => {
                   return (
                     <div key={index} className="flex items-center gap-3 py-2">
-                      <span className="w-4 h-1 rounded-full bg-amber-300"></span>
-                      <p className="text-sm ">{res}</p>
+                      <span className="min-w-3 h-1 rounded-full bg-amber-300"></span>
+                      <p className="text-sm text-wrap ">{res}</p>
                     </div>
                   );
                 })}

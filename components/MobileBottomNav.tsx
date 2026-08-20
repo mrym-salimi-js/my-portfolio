@@ -66,7 +66,9 @@ export default function MobileBottomNav() {
 
   return (
     <nav className=" fixed bottom-3 left-1/2 z-50 w-[calc(100%-24px)] max-w-md -translate-x-1/2 md:hidden rounded-2xl border bg-background/80 p-2 shadow-2xl backdrop-blur-xl block ">
-      <div className="flex items-center justify-around">
+      <div
+        className={`flex  items-center justify-around  ${lang === "en" ? "flex-row" : "flex-row-reverse"}`}
+      >
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;

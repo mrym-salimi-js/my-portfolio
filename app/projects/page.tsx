@@ -71,7 +71,7 @@ export default function Projects() {
                     <p className="text-sm ">{item.role[lang]}</p>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <span className="w-4 h-1 rounded-full bg-amber-300"></span>
+                    <span className="min-w-3 h-1 rounded-full bg-amber-300"></span>
                     <p className="text-sm ">{item.type[lang]}</p>
                   </div>
 
@@ -92,7 +92,7 @@ export default function Projects() {
                 {item.responsibilities[lang].map((res, index) => {
                   return (
                     <div key={index} className="flex items-center gap-3 py-2">
-                      <span className="w-4 h-1 rounded-full bg-amber-300"></span>
+                      <span className="min-w-3 h-1 rounded-full bg-amber-300"></span>
                       <p className="text-sm ">{res}</p>
                     </div>
                   );
