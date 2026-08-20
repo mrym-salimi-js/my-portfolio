@@ -1,6 +1,6 @@
 "use client";
 
-import { heroData } from "@/data/here";
+import { heroData } from "@/data/hero";
 import { useLanguage } from "@/components/LanguageProvider";
 import Image from "next/image";
 
