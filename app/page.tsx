@@ -3,6 +3,7 @@
 import { heroData } from "@/data/hero";
 import { useLanguage } from "@/components/LanguageProvider";
 import Image from "next/image";
+import { Globe, Link } from "lucide-react";
 
 export default function Home() {
   const { lang } = useLanguage();
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <div
       dir={lang === "en" ? "ltr" : "rtl"}
-      className="w-full lg:w-[95%] h-[80vh]! flex flex-col xl:flex-row items-center gap-12 p-8 md:p-4"
+      className="w-full lg:w-[95%] min-h-[80vh]! flex flex-col xl:flex-row items-center gap-12 p-8 md:p-4"
     >
       <Image
         alt="maryam-salimi"
@@ -41,6 +42,17 @@ export default function Home() {
             >
               {tech}
             </span>
+          ))}
+        </div>
+        <div className="w-full border-t pt-3 border-primary/10 h-auto flex gap-2 flex-wrap text-[#695936] dark:text-primary">
+          {data.usefulLinks.map((link) => (
+            <div
+              className="w-30 p-3 bg-primary rounded-xl  hover:opacity-[0.7]  text-yellow-900 flex items-center gap-3 cursor-pointer "
+              key={link.id}
+            >
+              <Link className="size-4 " />
+              <span className="w-auto  text-sm ">{link.title}</span>
+            </div>
           ))}
         </div>
       </div>
