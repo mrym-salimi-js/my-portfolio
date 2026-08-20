@@ -21,7 +21,9 @@ export default function About() {
             <UserRound className="size-4.5 shrink-0 " />
             <h1 className="font-lalezar text-3xl ">{data.title[lang]}</h1>
           </div>
-          <p className="text-[0.95rem] text-amber-300 mr-8">
+          <p
+            className={`text-[0.95rem] text-amber-300 ${lang === "en" ? "ml-8" : "mr-8"}`}
+          >
             {data.intro[lang]}
           </p>
         </div>
