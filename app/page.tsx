@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div
       dir={lang === "en" ? "ltr" : "rtl"}
-      className="w-full lg:w-[95%] min-h-[80vh]! flex flex-col xl:flex-row items-center gap-12 p-8 md:p-4"
+      className={`w-full lg:w-[95%] min-h-[80vh]!  flex flex-col xl:flex-row items-center gap-12 p-8 md:p-4 ${lang === "en" ? "lg:mr-20" : "lg:ml-20"}  `}
     >
       <Image
         alt="maryam-salimi"

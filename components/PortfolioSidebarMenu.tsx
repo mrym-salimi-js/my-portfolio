@@ -77,11 +77,15 @@ export default function PortfolioSidebarMenu() {
   const pathname = usePathname();
 
   return (
-    <div className="w-auto h-auto hidden md:block">
+    <div
+      dir={lang === "en" ? "ltr" : "rtl"}
+      className={`w-auto h-auto hidden md:block `}
+    >
       <SidebarProvider>
         <Sidebar
+          side={lang === "en" ? "left" : "right"}
           collapsible="icon"
-          className="ml-6 h-[90%]   w-60 my-auto rounded-2xl border overflow-hidden "
+          className={`${lang === "en" ? "ml-6" : "mr-6"}  h-[90%]   w-60 my-auto rounded-2xl border overflow-hidden`}
         >
           <SidebarHeader>
             <div className="flex w-full items-center gap-3 border-b p-1 py-4">
@@ -120,7 +124,9 @@ export default function PortfolioSidebarMenu() {
         </Sidebar>
 
         <main className="min-h-screen ">
-          <div className="w-10 h-10 rounded-xl mt-6 ml-4 hover:opacity-[0.7] flex items-center justify-center bg-primary/10">
+          <div
+            className={`w-10 h-10 rounded-xl mt-6 ${lang === "en" ? "ml-4" : "mr-4"} hover:opacity-[0.7] flex items-center justify-center bg-primary/10`}
+          >
             <SidebarTrigger className="text-primary " />
           </div>
         </main>
