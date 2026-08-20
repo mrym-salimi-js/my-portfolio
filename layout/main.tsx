@@ -22,7 +22,9 @@ export default function MainLayout({ children }: LanguageLayoutProps) {
       <MobileBottomNav />
 
       <div className="w-full mb-20 md:mb-0  h-auto px-6 py-4 flex flex-col gap-5 ">
-        <header className="w-full h-12   flex flex-row-reverse items-center justify-between ">
+        <header
+          className={`w-full h-12   flex ${lang === "en" ? "flex-row-reverse" : "flex-row"} items-center justify-between `}
+        >
           <div
             className={`w-full h-full flex gap-2 items-center ${lang === "en" ? "justify-end" : "justify-start"}`}
           >
@@ -30,12 +32,13 @@ export default function MainLayout({ children }: LanguageLayoutProps) {
             <LangToggle />
           </div>
           {/*Logo */}
-          <div className="flex gap-3 items-center md:hidden ">
-            <Code2 className="size-6 shrink-0 text-amber-400" />
-
+          <div
+            className={`flex gap-3 items-center md:hidden  ${lang === "en" ? "flex-row-reverse" : "flex-row"}`}
+          >
             <p className="whitespace-nowrap font-mono text-amber-400 group-data-[collapsible=icon]:hidden">
               Maryam Salimi
             </p>
+            <Code2 className="size-6 shrink-0 text-amber-400" />
           </div>
         </header>
         {children}
